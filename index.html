@@ -1,0 +1,1922 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Core - Professional IT Solutions & Services</title>
+    <meta name="description"
+        content="IT Core specializes in professional IT solutions and security - Network services, technical support, and monitoring systems">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <script>
+      function toggleTopMenu() {
+        const menu = document.getElementById("topMenuLinks");
+        menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+      }
+    </script>
+
+    <style>
+        .text-left{
+            text-align: left;
+        }
+        .top-bar{
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          background: #ffffff;
+          padding: 0 15px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+          z-index: 9999;
+        }
+
+        .top-logo img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          transition: transform 0.3s ease;
+        }
+
+        .top-logo img:hover {
+          transform: scale(1.05);
+        }
+
+        .top-menu-btn {
+          font-size: 28px;
+          background: none;
+          border: none;
+          color: #1f2937;
+          cursor: pointer;
+        }
+
+        .top-menu-links {
+          position: absolute;
+          top: 60px;
+          right: 20px;
+          background: #ffffff;
+          border-radius: 8px;
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+          display: none;
+          flex-direction: column;
+          min-width: 180px;
+        }
+
+        .top-menu-links a {
+          padding: 10px 15px;
+          text-decoration: none;
+          color: #1f2937;
+          border-bottom: 1px solid #eee;
+          transition: background 0.2s;
+        }
+
+        .top-menu-links a:hover {
+          background: #f3f4f6;
+        }
+
+        @media (min-width: 768px) {
+          .top-menu-btn {
+            display: none;
+          }
+
+          .top-menu-links {
+            display: flex !important;
+            position: static;
+            flex-direction: row;
+            gap: 1rem;
+            box-shadow: none;
+          }
+        }
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            direction: ltr;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* رأس الصفحة */
+        .header {
+            position: relative;
+            color: white;
+            text-align: center;
+            padding: 4rem 1rem;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .header::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("https://i.postimg.cc/d3v2G2Xp/download.jpg");
+            background-size: cover;
+            filter: brightness(0.5) blur(2px);
+            transform: scale(1.1);
+            transition: transform 0.6s ease;
+            z-index: -1;
+        }
+
+        .header:hover::before {
+            transform: scale(1.2);
+            filter: brightness(0.4) blur(3px);
+        }
+
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo-container {
+            margin-bottom: 2rem;
+        }
+
+        .logo {
+            width: 10rem;
+            height: 10rem;
+            margin: 0 auto 1rem;
+            transition: transform 0.3s ease;
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .company-name {
+            font-size: 3rem;
+            font-weight: 900;
+            margin: 0.5rem 0;
+            background: linear-gradient(135deg, #ffffff 0%, #93c5fd 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+
+        }
+
+        .company-tagline {
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        /* قائمة التنقل */
+        .main-nav {
+            margin-top: 1rem;
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #93c5fd;
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* قائمة الهاتف */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            margin-top: 1rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .mobile-menu-btn:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-nav {
+            display: none;
+            margin-top: 1rem;
+        }
+
+        .mobile-nav.active {
+            display: block;
+        }
+
+        .mobile-nav-list {
+            list-style: none;
+        }
+
+        .mobile-nav-link {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 1rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .mobile-nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #93c5fd;
+        }
+
+        /* القسم الرئيسي Hero */
+        .hero-section {
+            position: relative;
+            background: linear-gradient(135deg, #1e3a8a 0%, #0056b3 50%, #1e40af 100%);
+            color: white;
+            padding: 5rem 0;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 2rem;
+            line-height: 1.2;
+        }
+
+        .highlight {
+            color: #fbbf24;
+        }
+
+        .hero-description {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: #bfdbfe;
+            line-height: 1.8;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .feature-card {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-right: 1rem;
+            color: #fbbf24;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            color: #000;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(251, 191, 36, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(251, 191, 36, 0.4);
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .support-badge {
+            position: absolute;
+            bottom: -1.5rem;
+            left: -1.5rem;
+            background: #fbbf24;
+            color: #000;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .badge-number {
+            font-size: 2rem;
+            font-weight: 900;
+            text-align: center;
+        }
+
+        .badge-text {
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        /* أقسام عامة */
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+
+        .section-title.white {
+            color: white;
+        }
+
+        .section-divider {
+            width: 6rem;
+            height: 4px;
+            background: #0056b3;
+            margin: 0 auto 1.5rem;
+            border-radius: 2px;
+        }
+
+        .section-divider.yellow {
+            background: #fbbf24;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #6b7280;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .section-subtitle.white {
+            color: #bfdbfe;
+        }
+
+        /* قسم من نحن */
+        .about-section {
+            background: white;
+            padding: 5rem 0;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .about-subtitle {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0056b3;
+            margin: 2rem 0 1rem 0;
+        }
+
+        .about-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #6b7280;
+            margin-bottom: 1.5rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #0056b3 0%, #1e40af 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 86, 179, 0.2);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #fbbf24;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .about-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        /* قسم الخدمات */
+        .services-section {
+            background: linear-gradient(135deg, #1e3a8a 0%, #0056b3 100%);
+            padding: 5rem 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #0056b3 0%, #1e40af 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+
+        .service-description {
+            color: #6b7280;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features {
+            list-style: none;
+            padding: 0;
+        }
+
+        .service-features li {
+            padding: 0.5rem 0;
+            color: #4b5563;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .service-features li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #0056b3;
+            font-weight: bold;
+        }
+
+        /* قسم المشاريع */
+        .projects-section {
+            background: #f9fafb;
+            padding: 5rem 0;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+
+        .project-description {
+            color: #6b7280;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .project-tag {
+            background: #e5f3ff;
+            color: #0056b3;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* قسم التواصل */
+        .contact-section {
+            background: linear-gradient(135deg, #1e3a8a 0%, #0056b3 100%);
+            padding: 5rem 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .contact-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .contact-description {
+            color: #bfdbfe;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .contact-items {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: #fbbf24;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-icon i {
+            font-size: 1.2rem;
+            color: #000;
+        }
+
+        .contact-details h4 {
+            color: white;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-details p {
+            color: #bfdbfe;
+            margin: 0;
+        }
+
+        /* نموذج التواصل */
+        .contact-form-container {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: #0056b3;
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #0056b3 0%, #1e40af 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 86, 179, 0.3);
+        }
+
+        /* التذييل */
+        .footer {
+            background: #1f2937;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fbbf24;
+            margin-bottom: 1rem;
+        }
+
+        .footer-subtitle {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .footer-description {
+            color: #9ca3af;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: #374151;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: #fbbf24;
+            color: #000;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #fbbf24;
+        }
+
+        .footer-contact p {
+            color: #9ca3af;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-contact i {
+            color: #fbbf24;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 1rem;
+            text-align: center;
+            color: #9ca3af;
+        }
+
+        /* الاستجابة للشاشات المختلفة */
+        @media (max-width: 1024px) {
+
+            .hero-grid,
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .services-grid,
+            .projects-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-nav {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-description {
+                font-size: 1.1rem;
+            }
+
+            .features-grid,
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .hero-section,
+            .about-section,
+            .services-section,
+            .projects-section,
+            .contact-section {
+                padding: 3rem 0;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .services-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form-container {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+
+            .company-name {
+                font-size: 2rem;
+            }
+
+            .logo {
+                width: 8rem;
+                height: 8rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .contact-title {
+                font-size: 1.5rem;
+            }
+
+            .form-title {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* أنماط زر الاتصال العائم المعدلة */
+        .contact-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9999;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .contact-toggle {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #0056b3 0%, #1e40af 100%);
+            color: white;
+            font-size: 24px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .contact-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .contact-options {
+            display: none;
+            flex-direction: column;
+            background: white;
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            width: 220px;
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .contact-header {
+            padding: 10px 0;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .contact-header h4 {
+            color: #1f2937;
+            margin: 0;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .contact-options a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 15px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.2s ease;
+            font-size: 14px;
+        }
+
+        .contact-options a:hover {
+            background: #f3f4f6;
+            color: #0056b3;
+            transform: translateX(-3px);
+        }
+
+        .contact-options a i {
+            font-size: 16px;
+            width: 20px;
+            text-align: center;
+        }
+
+        #whatsapp-icon {
+            color: #25d366;
+        }
+
+        #facebook-icon {
+            color: #1877f2;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .phone-icon {
+            color: #28a745; /* أخضر */
+            font-size: 20px;
+            margin-right: 5px;
+            background: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <!-- قائمة التنقل المعدلة -->
+            <div class="contact-float">
+                <button class="contact-toggle" onclick="toggleContacts()">
+                    <i class="fas fa-headset"></i>
+                </button>
+                <div id="contact-options" class="contact-options">
+                    <div class="contact-header">
+                        <h4>Get in Touch</h4>
+                    </div>
+                    <a href="https://wa.me/201095363315" target="_blank"><i class="fab fa-whatsapp" id="whatsapp-icon"></i> WhatsApp</a>
+                    <a href="https://www.facebook.com/share/1JNBhPzHqi/" target="_blank"><i class="fab fa-facebook-f" id="facebook-icon"></i> Facebook</a>
+                    <a href="tel:+201095363315"><i class="fas fa-phone"></i> Call Us</a>
+                    <a href="mailto:adamakram515@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+                </div>
+            </div>
+
+            <!-- Logo -->
+            <div class="logo-container">
+                      <img src="https://i.postimg.cc/28ghsNLg/logo-for-website.jpg" alt="Logo" class="logo" width="170" height="170" style="border-radius: 50%;" />
+                      <h1 class="company-name">IT Core</h1>
+                              <p class="company-tagline">Professional IT Solutions & Services</p>
+        </div>
+
+            <!-- Main Navigation -->
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About Us</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Mobile Navigation -->
+            <nav class="mobile-nav" id="mobileNav">
+                <ul class="mobile-nav-list">
+                    <li><a href="#home" class="mobile-nav-link">Home</a></li>
+                    <li><a href="#about" class="mobile-nav-link">About Us</a></li>
+                    <li><a href="#services" class="mobile-nav-link">Services</a></li>
+                    <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+                    <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-grid">
+                <div class="hero-text">
+                    <h2 class="hero-title">
+                        Welcome to <span class="highlight">IT Core</span>
+                    </h2>
+                    <p class="hero-description">
+                        We provide professional IT solutions to help businesses and medical centers secure and operate
+                        their systems with high efficiency.
+                    </p>
+
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <i class="fas fa-bolt feature-icon"></i>
+                            <span>Fast Technical Support</span>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-shield-alt feature-icon"></i>
+                            <span>Comprehensive Security</span>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-network-wired feature-icon"></i>
+                            <span>Network Management</span>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-video feature-icon"></i>
+                            <span>Monitoring Systems</span>
+                        </div>
+                    </div>
+
+                    <button class="cta-button" onclick="scrollToSection('contact')">
+                        Contact Us Now
+                    </button>
+                </div>
+
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400"
+                        alt="IT Professional Team" class="hero-img">
+                    <div class="support-badge">
+                        <div class="badge-content">
+                            <div class="badge-number">24/7</div>
+                            <div class="badge-text">Continuous Support</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Us</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle">
+                    IT Core is a leading company in providing comprehensive IT solutions with over 10 years of
+                    experience in the field
+                </p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-text">
+                    <h3 class="about-subtitle">Our Vision</h3>
+                    <p class="about-description">
+                        To be the leading provider of innovative IT solutions that empower businesses to achieve their
+                        digital transformation goals securely and efficiently.
+                    </p>
+
+                    <h3 class="about-subtitle">Our Mission</h3>
+                    <p class="about-description">
+                        We are committed to delivering exceptional IT services and solutions that help our clients
+                        optimize their operations, enhance security, and drive business growth through technology.
+                    </p>
+
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Satisfied Clients</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">10+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Support Available</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">99.9%</div>
+                            <div class="stat-label">Uptime Guarantee</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400"
+                        alt="Our Professional Team" class="about-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title white">Our Services</h2>
+                <div class="section-divider yellow"></div>
+                <p class="section-subtitle white">
+                    We offer comprehensive IT solutions to meet all your technology needs
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3 class="service-title">Infrastructure Services
+                </h3>
+                    <p class="service-description">
+                        We offer IT Infrastructure services that are catered to support a smooth Network Systems and workstation routine, based on your business needs and objectives. Including Datacenter, surveillance, laptop, printers, ..
+                    </p>
+                    <ul class="service-features">
+                        <li>Infrastructure and Network Design & Deployment Solutions</li>
+                        <li>24/7 Network Monitoring</li>
+                        <li>Performance Optimization</li>
+                        <li>Troubleshooting & Support</li>
+                    </ul>
+                                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3 class="service-title">Software Licensing
+</h3>
+                    <p class="service-description">
+                        Affordable and genuine licenses for essential software tools to boost your productivity and creativity.
+                    </p>
+                    <ul class="service-features">
+                        <li>Microsoft Windows & Office Licenses</li>
+                        <li>Adobe Creative Cloud (Photoshop, Illustrator, Premiere, etc.)
+</li>
+                        <li>Canva Pro & other design tools</li>
+                        <li>AutoCAD, CorelDraw, and more
+</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="service-title">Cybersecurity Solutions</h3>
+                    <p class="service-description">
+                        Comprehensive security measures to protect your business from cyber threats and ensure data
+                        integrity.
+                    </p>
+                    <ul class="service-features">
+                        <li>Firewall Configuration</li>
+                        <li>Antivirus & Anti-malware</li>
+                        <li>Security Audits</li>
+                        <li>Data Backup & Recovery</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3 class="service-title">CCTV & Monitoring</h3>
+                    <p class="service-description">
+                        Advanced surveillance systems installation and monitoring for enhanced security of your
+                        premises.
+                    </p>
+                    <ul class="service-features">
+                        <li>HD Camera Installation</li>
+                        <li>Remote Monitoring</li>
+                        <li>Motion Detection</li>
+                        <li>Cloud Storage Solutions</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="service-title">Technical Support</h3>
+                    <p class="service-description">
+                        Round-the-clock technical support to keep your systems running smoothly and efficiently.
+                    </p>
+                    <ul class="service-features">
+                        <li>24/7 Help Desk</li>
+                        <li>Remote Assistance</li>
+                        <li>On-site Support</li>
+                        <li>Preventive Maintenance</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="service-title">Server Management</h3>
+                    <p class="service-description">
+                        Complete server setup, configuration, and maintenance for optimal performance and reliability.
+                    </p>
+                    <ul class="service-features">
+                        <li>Server Installation</li>
+                        <li>Performance Monitoring</li>
+                        <li>Backup Solutions</li>
+                        <li>Security Updates</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3 class="service-title">Cloud Solutions</h3>
+                    <p class="service-description">
+                        Modern cloud infrastructure and migration services to enhance scalability and reduce costs.
+                    </p>
+                    <ul class="service-features">
+                        <li>Cloud Migration</li>
+                        <li>Infrastructure Setup</li>
+                        <li>Data Synchronization</li>
+                        <li>Scalability Planning</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Projects</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle">
+                    Explore some of our successful IT implementations and solutions
+                </p>
+            </div>
+
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250"
+                            alt="Hospital IT Infrastructure">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Hospital IT Infrastructure</h3>
+                        <p class="project-description">
+                            Complete IT infrastructure setup for a 200-bed hospital including network design, security
+                            systems, and medical equipment integration.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Network Setup</span>
+                            <span class="project-tag">Security</span>
+                            <span class="project-tag">Medical Systems</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250"
+                            alt="Corporate Office Network">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Corporate Office Network</h3>
+                        <p class="project-description">
+                            Enterprise-grade network infrastructure for a multinational company with 500+ employees,
+                            including cloud integration and security protocols.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Enterprise Network</span>
+                            <span class="project-tag">Cloud Integration</span>
+                            <span class="project-tag">Enterprise Security</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250"
+                            alt="Educational Institution">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Educational Institution Setup</h3>
+                        <p class="project-description">
+                            Comprehensive IT solution for a university including campus-wide network, e-learning
+                            platform, and student management systems.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Campus Network</span>
+                            <span class="project-tag">E-Learning</span>
+                            <span class="project-tag">Management Systems</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://xontel.com/wp-content/uploads/2023/03/%D9%83%D8%A7%D9%85%D9%8A%D8%B1%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D8%B1%D8%A7%D9%82%D8%A8%D8%A9-image.jpg"
+                            alt="Manufacturing Plant Security">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Manufacturing Plant Security</h3>
+                        <p class="project-description">
+                            Advanced security and monitoring systems for a large manufacturing facility including CCTV,
+                            access control, and network security.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">CCTV Systems</span>
+                            <span class="project-tag">Access Control</span>
+                            <span class="project-tag">Industrial Security</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title white">Contact Us</h2>
+                <div class="section-divider yellow"></div>
+                <p class="section-subtitle white">
+                    Get in touch with us for all your IT needs. We're here to help you succeed.
+                </p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3 class="contact-title">Get In Touch</h3>
+                    <p class="contact-description">
+                        Ready to transform your IT infrastructure? Contact us today for a free consultation and discover
+                        how we can help your business thrive.
+                    </p>
+
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Our Location</h4>
+                                <p>123 Technology Street, Business District, Cairo, Egypt</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Phone Numbers</h4>
+                                <p>+20 109 536 3315</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Email Address</h4>
+                                <p>abdellrahman.akram@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Working Hours</h4>
+                                <p>24/7 Support Available</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-container">
+                    <form class="contact-form" action="https://formsubmit.co/adamakram515@gmail.com" method="POST" onsubmit="handleContactForm(event)">
+                        <h3 class="form-title">Send us a Message</h3>
+
+                        <div class="form-group">
+                            <label for="name" class="form-label">Full Name *</label>
+                            <input type="text" id="name" name="name" class="form-input" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address *</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-input">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service" class="form-label">Service Needed</label>
+                            <select id="service" name="service" class="form-select">
+                                <option value="">Select a service</option>
+                                <option value="network">Network Management</option>
+                                <option value="security">Cybersecurity Solutions</option>
+                                <option value="cctv">CCTV & Monitoring</option>
+                                <option value="support">Technical Support</option>
+                                <option value="server">Server Management</option>
+                                <option value="cloud">Cloud Solutions</option>
+                                <option value="consultation">Free Consultation</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message *</label>
+                            <textarea id="message" name="message" class="form-textarea" rows="5"
+                                placeholder="Tell us about your requirements..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">IT Core</h3>
+                    <p class="footer-description">
+                        Your trusted partner for professional IT solutions. We help businesses secure and optimize their
+                        technology infrastructure.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/1JNBhPzHqi/" class="social-link" target="_blank"><i
+                                class="fab fa-facebook"></i></a>
+                        <a href="https://wa.me/201095363315" target="_blank" class="social-link">
+                            <i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">Network Management</a></li>
+                        <li><a href="#services">Cybersecurity Solutions</a></li>
+                        <li><a href="#services">CCTV & Monitoring</a></li>
+                        <li><a href="#services">Technical Support</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Contact Info</h4>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-phone"></i> +20 109 536 3315</p>
+                        <p><i class="fas fa-envelope"></i> info@itcore.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2023 IT Core. All rights reserved. | Professional IT Solutions & Services</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleContacts() {
+            const options = document.getElementById("contact-options");
+            const toggleBtn = document.querySelector(".contact-toggle");
+            
+            if (options.style.display === "flex") {
+                options.style.display = "none";
+                toggleBtn.style.transform = "scale(1)";
+            } else {
+                options.style.display = "flex";
+                toggleBtn.style.transform = "scale(1.1)";
+            }
+        }
+
+        // إغلاق القائمة عند النقر خارجها
+        document.addEventListener('click', function(event) {
+            const contactFloat = document.querySelector('.contact-float');
+            const isClickInside = contactFloat.contains(event.target);
+            
+            if (!isClickInside) {
+                document.getElementById("contact-options").style.display = "none";
+                document.querySelector(".contact-toggle").style.transform = "scale(1)";
+            }
+        });
+
+        // متغيرات عامة
+        let mobileMenuOpen = false;
+
+        // دالة التنقل السلس
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                closeMobileMenu();
+            }
+        }
+
+        // دالة فتح/إغلاق القائمة المحمولة
+        function toggleMobileMenu() {
+            const mobileNav = document.getElementById('mobileNav');
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+
+            mobileMenuOpen = !mobileMenuOpen;
+
+            if (mobileMenuOpen) {
+                mobileNav.classList.add('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-times"></i>';
+            } else {
+                mobileNav.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        }
+
+        // دالة إغلاق القائمة المحمولة
+        function closeMobileMenu() {
+            const mobileNav = document.getElementById('mobileNav');
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+
+            mobileMenuOpen = false;
+            mobileNav.classList.remove('active');
+            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        }
+
+        // دالة التحقق من صحة البريد الإلكتروني
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        // دالة إظهار الإشعارات
+        function showNotification(message, type = 'success') {
+            // إنشاء عنصر الإشعار
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.innerHTML = `
+                <div class="notification-content">
+                    <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
+                    <span>${message}</span>
+                </div>
+            `;
+
+            // إضافة الإشعار إلى الصفحة
+            document.body.appendChild(notification);
+
+            // إظهار الإشعار مع تأثير
+            setTimeout(() => {
+                notification.classList.add('show');
+            }, 100);
+
+            // إزالة الإشعار بعد 5 ثوان
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 5000);
+        }
+
+        // دالة معالجة نموذج التواصل
+        function handleContactForm(event) {
+            event.preventDefault();
+
+            const formData = new FormData(event.target);
+            const name = formData.get('name').trim();
+            const email = formData.get('email').trim();
+            const phone = formData.get('phone').trim();
+            const service = formData.get('service');
+            const message = formData.get('message').trim();
+
+            // التحقق من البيانات
+            if (!name || !email || !message) {
+                showNotification('Please fill in all required fields', 'error');
+                return;
+            }
+
+            if (!isValidEmail(email)) {
+                showNotification('Please enter a valid email address', 'error');
+                return;
+            }
+
+            if (message.length < 10) {
+                showNotification('Please write a longer message (at least 10 characters)', 'error');
+                return;
+            }
+
+            // إرسال البيانات (محاكاة)
+            const submitBtn = event.target.querySelector('.submit-btn');
+            const originalText = submitBtn.innerHTML;
+
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+
+            // محاكاة إرسال البيانات
+            setTimeout(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+
+                showNotification('Your message has been sent successfully! We will contact you soon.');
+                event.target.reset();
+
+                // طباعة البيانات في وحدة التحكم للمطور
+                console.log('Contact form submitted:', {
+                    name, email, phone, service, message,
+                    timestamp: new Date().toISOString()
+                });
+            }, 2000);
+        }
+
+        // دالة التهيئة الرئيسية
+        function initializeWebsite() {
+            // إضافة مستمعي الأحداث
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+            }
+
+            // إضافة مستمعي الأحداث لروابط التنقل
+            const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link, .footer-links a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const href = link.getAttribute('href');
+                    if (href.startsWith('#')) {
+                        e.preventDefault();
+                        const target = href.substring(1);
+                        scrollToSection(target);
+                    }
+                });
+            });
+
+            // إغلاق القائمة المحمولة عند النقر خارجها
+            document.addEventListener('click', (e) => {
+                const mobileNav = document.getElementById('mobileNav');
+                const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+
+                if (mobileMenuOpen &&
+                    !mobileNav.contains(e.target) &&
+                    !mobileMenuBtn.contains(e.target)) {
+                    closeMobileMenu();
+                }
+            });
+
+            // إضافة مستمع لتغيير حجم النافذة
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768 && mobileMenuOpen) {
+                    closeMobileMenu();
+                }
+            });
+
+            // إضافة CSS للإشعارات
+            const notificationCSS = `
+                <style>
+                .notification {
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    background: white;
+                    padding: 1rem 1.5rem;
+                    border-radius: 10px;
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+                    z-index: 1000;
+                    transform: translateX(400px);
+                    transition: transform 0.3s ease;
+                    border-left: 4px solid #0056b3;
+                }
+
+                .notification.success {
+                    border-left-color: #10b981;
+                }
+
+                .notification.error {
+                    border-left-color: #ef4444;
+                }
+
+                .notification.show {
+                    transform: translateX(0);
+                }
+
+                .notification-content {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                }
+
+                .notification i {
+                    font-size: 1.2rem;
+                }
+
+                .notification.success i {
+                    color: #10b981;
+                }
+
+                .notification.error i {
+                    color: #ef4444;
+                }
+
+                @media (max-width: 768px) {
+                    .notification {
+                        right: 10px;
+                        left: 10px;
+                        transform: translateY(-100px);
+                    }
+
+                    .notification.show {
+                        transform: translateY(0);
+                    }
+                }
+                </style>
+            `;
+
+            document.head.insertAdjacentHTML('beforeend', notificationCSS);
+        }
+
+        // تشغيل الكود عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeWebsite();
+        });
+
+        // تصدير الدوال للاستخدام العام
+        window.scrollToSection = scrollToSection;
+        window.toggleMobileMenu = toggleMobileMenu;
+        window.handleContactForm = handleContactForm;
+    </script>
+
+    <!-- ✅ Top Bar ثابت -->
+    <div class="top-bar">
+      <a href="#home" class="top-logo">
+        <img src="https://i.postimg.cc/28ghsNLg/logo-for-website.jpg" alt="Mini Logo" /> 
+      </a>
+        <h1 class="text">IT Core</h1>
+      <button class="top-menu-btn" onclick="toggleTopMenu()">☰</button>
+
+      <!-- القائمة اللي بتظهر -->
+      <div id="topMenuLinks" class="top-menu-links">
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+</body>
+</html>
